@@ -4,6 +4,6 @@
 
 @font-face {
     font-family: 'CabinetGrotesk';
-    src: url('public/fonts/cabinet-grotesk.ttf');
+    src: url('/fonts/cabinet-grotesk.ttf');
     /* add additional formats as necessary */
 }
