@@ -1,7 +1,16 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import React, { useEffect } from "react";
+import React, { Suspense, useEffect, lazy } from "react";
 import { ArrowRightIcon, MapPinIcon } from "@heroicons/react/24/solid";
+
+
+import {Canvas, extend} from "@react-three/fiber";
+// import {Model} from '../components/Justin';
+import { OrbitControls } from "@react-three/drei";
+import dynamic from 'next/dynamic'
+
+        // dynamic import justin.tsx with ssr set to false
+const Justin = dynamic(() => import('../components/Justin'), { ssr: false })
 
 export default function Home() {
 
@@ -29,8 +38,6 @@ export default function Home() {
                 })
             }
         }
-
-
     })
 
 
@@ -43,6 +50,24 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main >
+
+          {/* ERRORS START HERE*/}
+
+          {/*<Canvas*/}
+          {/*    camera={{ position: [0, 0, 8.25], fov: 3.3 }}*/}
+          {/*    style={{*/}
+          {/*        // backgroundColor: '#111a21',*/}
+          {/*        width: '100%',*/}
+          {/*        height: '100%',*/}
+          {/*    }}*/}
+          {/*>*/}
+
+          {/*    <Suspense fallback={null}>*/}
+          {/*        <Justin position={[0, -1.70, 0]} />*/}
+          {/*    </Suspense>*/}
+          {/*    <OrbitControls enableZoom={false} autoRotate={true} autoRotateSpeed={5} minPolarAngle={Math.PI/2} maxPolarAngle={Math.PI/2} reverseOrbit={true} />*/}
+          {/*</Canvas>*/}
+
         <div className={'mt-[70px] mb-11 px-3.5 flex flex-col items-center justify-center  font-cabinet'}>
             {/* card */}
             <div className={'w-[360px] h-[360px] rounded-[20px] bg-black/40 relative p-4 flex flex-col text-white bg-gradient-to-b from-rose-400/40 to-orange-300/80'}>
@@ -128,7 +153,7 @@ export default function Home() {
                 <h4 className={'absolute top-0 right-44 text text-xs'}> creator ✶ designer ✶ coder ✶ </h4>
                 <div className={'h-[120px] w-[360px] rounded-[20px] flex items-center justify-center py-4 px-5 border border-black border-[1px] mb-3 '}>
                     <p>
-                        I’m a creative developer (he/him/his) currently based in Dallas, Texas. I’m really into CSS, animation, interaction, and learning new tools to add to my utility belt.
+                        I’m a creative developer ( he/him/his) currently based in Dallas, Texas. I’m really into CSS, animation, interaction, and learning new tools to add to my utility belt.
                     </p>
                 </div>
                 {/* bento boxes*/}
@@ -153,6 +178,7 @@ export default function Home() {
                     <div className={'h-[335px] w-[120px] rounded-[20px] flex flex-col items-start py-4 px-5 border border-black border-[1px]'}>
                         <span className={'border border-black rounded-full w-fit px-2.5 uppercase self-center'}> Links  </span>
                         <ul className={'mt-9 space-y-1'}>
+                            hi
                             <li className={'text-sm hover:underline'}> <a href={'https://www.linkedin.com/in/justin-lee-0a5b3b1b1/'}> LinkedIn </a> </li>
                             <li className={'text-sm hover:underline'}> <a href={'https://github.com/justinkpeter'}> Github </a> </li>
                             <li className={'text-sm hover:underline'}> <a href={'https://twitter.com/_justinpeter'}> Twitter </a> </li>
