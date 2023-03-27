@@ -45,7 +45,7 @@ export default function Home() {
       <main >
         <div className={'mt-[70px] mb-11 px-3.5 flex flex-col items-center justify-center  font-cabinet'}>
             {/* card */}
-            <div className={'w-[360px] h-[360px] rounded-[20px] bg-black/40 relative p-4 flex flex-col text-white font-cabinet'}>
+            <div className={'w-[360px] h-[360px] rounded-[20px] bg-black/40 relative p-4 flex flex-col text-white bg-gradient-to-b from-rose-400/40 to-orange-300/80'}>
                 {/* image */}
                 <Image src={'/images/avatar.jpg'} alt={'My Image'} className={'w-[125px] h-[125px] rounded-full object-cover object-top'} width={125} height={125}/>
                 {/*  name  */}
@@ -80,18 +80,18 @@ export default function Home() {
                     })
                 }
             </div>
-
             {/* intro */}
             <p className={'text-xl w-[360px] '}>
-                I combine technology with visual arts to bring a unique blend of creativity and technical expertise to every project.
+                Combining technology with visual arts to bring a unique blend of creativity and technical expertise to every project.
             </p>
-
             {/* projects */}
             <div>
                 <h2 className={'uppercase font-extrabold text-2xl my-11'}> projects </h2>
                 {/*  card   */}
-                <div className={'w-[360px] h-[360px] border border-black rounded-[20px] bg-[#C7AEA6] relative p-4 flex flex-col relative my-11 hover:cursor-pointer'}>
-                    <img src={'/images/blendify.jpg'} alt="My Image" className={'w-full h-[150px] mt-2 rounded-xl object-cover object-center'}/>
+                <div className={'w-[360px] h-[360px] border border-black rounded-[20px] bg-green-800/30 relative p-4 flex flex-col relative my-11 hover:cursor-pointer group '}>
+                    <div className={'overflow-hidden rounded-xl mt-2 '}>
+                        <img src={'/images/blendify.jpg'} alt="My Image" className={'w-full h-[150px] object-cover object-center group-hover:scale-125 transition ease-in-out duration-300'}/>
+                    </div>
                     <div className={'flex justify-between items-center my-2.5 '}>
                         <h3 className={'font-extrabold text-xl'}> Blendify </h3>
                         <div className={'flex flex-col text-right'}>
@@ -101,21 +101,23 @@ export default function Home() {
                         </div>
                     </div>
                     <hr className={'h-1 w-full border-black'}/>
-                    <p className={'my-4'}> My obsession with Spotify led to the inception of this app. Like Spotify Wrapped, but redesigned for a richer experience
+                    <p className={'my-4'}> My obsession with Spotify led to the inception of this app. Like Spotify Wrapped, but redesigned for a richer experience.
                     </p>
                 </div>
                 {/*  card   */}
-                <div className={'w-[360px] h-[360px] border border-black rounded-[20px] bg-[#C7AEA6] relative p-4 flex flex-col relative my-11 hover:cursor-pointer'}>
-                    <img src={'/images/justincrediblemoments.jpg'} alt="My Image" className={'w-full h-[150px] mt-2 rounded-xl object-cover object-center'}/>
+                <div className={'w-[360px] h-[360px] border border-black rounded-[20px] bg-stone-200 relative p-4 flex flex-col relative my-11 hover:cursor-pointer group'}>
+                    <div className={'relative overflow-hidden rounded-xl'}>
+                        <img src={'/images/justincrediblemoments.jpg'} alt="My Image" className={'w-full h-[150px] mt-2 rounded-xl object-cover object-center group-hover:scale-125 transition ease-in-out duration-300'}/>
+                    </div>
                     <div className={'flex justify-between items-center my-2.5 '}>
-                        <h3 className={'font-extrabold text-xl'}> JustIncredible <br/> Moments </h3>
+                        <h3 className={'font-extrabold text-xl'}> JustIncredible <br/> Moments  </h3>
                         <div className={'flex flex-col text-right'}>
                             <span className={'text-sm font-regular text-xs'}> NextJS </span>
                             <span className={'text-sm font-regular text-xs'}> UI/UX Design </span>
                             <span className={'text-sm font-regular text-xs'}> TailwindCSS </span>
                         </div>
                     </div>
-                    <hr className={'h-1 w-full bg-black border-black'}/>
+                    <hr className={'w-full bg-black border-black'}/>
                     <p className={'my-4'}> All the beauty and glory of a not-so-average photography portfolio. Photos curated by yours truly.
                     </p>
                 </div>
@@ -123,7 +125,7 @@ export default function Home() {
             {/* about me */}
             <div className={'relative'}>
                 <h2 className={'uppercase font-extrabold text-2xl my-11'}> about me  </h2>
-                <h4 className={'text text-xs'}> creator ✶ designer ✶ coder ✶ </h4>
+                <h4 className={'absolute top-0 right-44 text text-xs'}> creator ✶ designer ✶ coder ✶ </h4>
                 <div className={'h-[120px] w-[360px] rounded-[20px] flex items-center justify-center py-4 px-5 border border-black border-[1px] mb-3 '}>
                     <p>
                         I’m a creative developer (he/him/his) currently based in Dallas, Texas. I’m really into CSS, animation, interaction, and learning new tools to add to my utility belt.
