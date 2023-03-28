@@ -1,16 +1,8 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import React, { Suspense, useEffect, lazy } from "react";
+import React, { useEffect } from "react";
 import { ArrowRightIcon, MapPinIcon } from "@heroicons/react/24/solid";
-
-
-import {Canvas, extend} from "@react-three/fiber";
-// import {Model} from '../components/Justin';
-import { OrbitControls } from "@react-three/drei";
-import dynamic from 'next/dynamic'
-
-        // dynamic import justin.tsx with ssr set to false
-const Justin = dynamic(() => import('../components/Justin'), { ssr: false })
+import Model from '../components/Model';
 
 export default function Home() {
 
@@ -40,7 +32,6 @@ export default function Home() {
         }
     })
 
-
     return (
     <>
       <Head>
@@ -52,23 +43,8 @@ export default function Home() {
       <main >
 
           {/* ERRORS START HERE*/}
-
-          {/*<Canvas*/}
-          {/*    camera={{ position: [0, 0, 8.25], fov: 3.3 }}*/}
-          {/*    style={{*/}
-          {/*        // backgroundColor: '#111a21',*/}
-          {/*        width: '100%',*/}
-          {/*        height: '100%',*/}
-          {/*    }}*/}
-          {/*>*/}
-
-          {/*    <Suspense fallback={null}>*/}
-          {/*        <Justin position={[0, -1.70, 0]} />*/}
-          {/*    </Suspense>*/}
-          {/*    <OrbitControls enableZoom={false} autoRotate={true} autoRotateSpeed={5} minPolarAngle={Math.PI/2} maxPolarAngle={Math.PI/2} reverseOrbit={true} />*/}
-          {/*</Canvas>*/}
-
-        <div className={'mt-[70px] mb-11 px-3.5 flex flex-col items-center justify-center  font-cabinet'}>
+          <Model />
+        <div className={'mt-[30px] mb-11 px-3.5 flex flex-col items-center justify-center  font-cabinet'}>
             {/* card */}
             <div className={'w-[360px] h-[360px] rounded-[20px] bg-black/40 relative p-4 flex flex-col text-white bg-gradient-to-b from-rose-400/40 to-orange-300/80'}>
                 {/* image */}
@@ -132,7 +108,7 @@ export default function Home() {
                 {/*  card   */}
                 <div className={'w-[360px] h-[360px] border border-black rounded-[20px] bg-stone-200 relative p-4 flex flex-col relative my-11 hover:cursor-pointer group'}>
                     <div className={'relative overflow-hidden rounded-xl'}>
-                        <img src={'/images/justincrediblemoments.jpg'} alt="My Image" className={'w-full h-[150px] mt-2 rounded-xl object-cover object-center group-hover:scale-125 transition ease-in-out duration-300'}/>
+                        <img src={'/images/justincrediblemoments.jpg'} alt="My Image" className={'w-full h-full mt-2 rounded-xl object-cover object-center group-hover:scale-125 transition ease-in-out duration-300'}/>
                     </div>
                     <div className={'flex justify-between items-center my-2.5 '}>
                         <h3 className={'font-extrabold text-xl'}> JustIncredible <br/> Moments  </h3>
