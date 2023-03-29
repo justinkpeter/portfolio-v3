@@ -1,6 +1,7 @@
 import * as React from 'react';
-import { useRef } from 'react';
+import { useRef, useEffect } from 'react';
 import dynamic from 'next/dynamic';
+import * as THREE from 'three';
 import {Canvas, useThree, extend, useFrame} from 'react-three-fiber';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import { useLoader } from 'react-three-fiber';
@@ -27,7 +28,7 @@ const CameraControls = () => {
             args={[camera, domElement]}
             enableZoom={false}
             autoRotate={true}
-            autoRotateSpeed={8}
+            autoRotateSpeed={-3}
             reverseOrbit={true}
         />
     )
@@ -65,16 +66,44 @@ export default function Model() {
         ssr: false
     });
 
+    useEffect(() => {
+        const canvasContainer = document.getElementById('canvas-container') ;
+        const renderer = new THREE.WebGLRenderer({ antialias: true });
+        if(canvasContainer){
+            console.log('got canvas container');
+            renderer.setSize(canvasContainer.offsetWidth, canvasContainer.offsetHeight);
+            canvasContainer.appendChild(renderer.domElement);
+            window.addEventListener('resize', () => {
+                console.log('resizing');
+                renderer.setSize(canvasContainer.offsetWidth, canvasContainer.offsetHeight);
+            });
+        }
+
+    }, [])
+
     return (
         <>
-            <Canvas  camera={{ position: [0, 0, 8.25], fov: 3.3 }}>
-                <ambientLight intensity={0.5} />
-                <spotLight intensity={0.8} position={[300, 300, 400]} />
-                <Suspense fallback={null}>
-                    <DynamicModel url={'/models/model.glb'} position={[0, -1.70, 0]} />
-                </Suspense>
-                <CameraControls />
-            </Canvas>
+            <div className={'sm:hidden'}>
+                <Canvas  camera={{ position: [0, 0, 8.25], fov: 4.3 }} style={{width: '100%'}} className={'relative max-w-fit sm:bg-red-300 sm:w-full'}>
+                    <ambientLight intensity={0.5} />
+                    <spotLight intensity={0.8} position={[300, 300, 400]} />
+                    <Suspense fallback={null}>
+                        <DynamicModel url={'/models/model.glb'} position={[0, -1.70, 0]} />
+                    </Suspense>
+                    <CameraControls />
+                </Canvas>
+            </div>
+
+            <div id={'canvas-container'} className={'hidden sm:flex h-[calc(50vh)] w-[calc(40vw)] relative '}>
+                <Canvas  camera={{ position: [0.2, 0.6, 8.25], fov: 5 }}  className={''}>
+                    {/*<ambientLight intensity={0.5} />*/}
+                    <spotLight intensity={0.8} position={[300, 300, 400]} />
+                    <Suspense fallback={null}>
+                        <DynamicModel url={'/models/model.glb'} position={[0, -1.70, 0]} />
+                    </Suspense>
+                    <CameraControls />
+                </Canvas>
+            </div>
         </>
     );
 }
