@@ -101,7 +101,7 @@ export default function Home() {
             <div className={'relative'}>
                 <div className={'relative flex my-6 '}>
                     <span className={'uppercase font-extrabold whitespace-nowrap text-2xl mt-11 mb-20 '}> about me  </span>
-                    <h4 className={'circle-text text-[9px]'}> creator  ✶  designer  ✶  coder ✶ </h4>
+                    <ArcText/>
                     <div className={'absolute left-[123px] '}>
                         <Model/>
                     </div>
