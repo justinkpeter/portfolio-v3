@@ -101,7 +101,6 @@ export default function Home() {
             <div className={'relative'}>
                 <div className={'relative flex my-6 '}>
                     <span className={'uppercase font-extrabold whitespace-nowrap text-2xl mt-11 mb-20 '}> about me  </span>
-                    <ArcText/>
                     <div className={'absolute left-[123px] '}>
                         <Model/>
                     </div>
@@ -165,10 +164,9 @@ export default function Home() {
             </nav>
             {/*<div className={'relative h-[calc(100vh-3rem)] w-full flex flex-col lg:pt-6 xl:pt-12 2xl:pt-20 items-center bg-blue-200 '}>*/}
             <div className={'relative h-[calc(100vh-3rem)] w-full flex flex-col pt-[calc(5vh)] items-center'}>
-                <div className={'group'}>
-                    <Model/>
-                    <ArcText/>
-                </div>
+
+                <Model/>
+                <ArcText/>
 
                 {/*<div className={'mt-[calc(3rem)]  2xl:mt-20 flex flex-col space-y-6 lg:space-y-7 font-panchang'}>*/}
                 <div className={'mt-[calc(10vh)] flex flex-col space-y-6 lg:space-y-7 font-panchang'}>

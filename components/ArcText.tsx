@@ -32,5 +32,5 @@ export  const ArcText = () => {
         }
     }, [])
 
-    return (<h4 id={'circle-text'} className={'bg-blue-200 circle-text text-[9px]'}> creator  ✶  designer  ✶  coder ✶ </h4>);
+    return (<h4 id={'circle-text'} className={'circle-text text-[9px]'}> creator  ✶  designer  ✶  coder ✶ </h4>);
 }
