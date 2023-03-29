@@ -11,6 +11,7 @@ module.exports = {
     extend: {},
     fontFamily:{
         'cabinet': ['CabinetGrotesk', 'sans-serif'],
+        'panchang': ['Panchang', 'sans-serif'],
     }
   },
   plugins: [],
