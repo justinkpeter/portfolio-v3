@@ -155,7 +155,7 @@ export default function Home() {
         </div>
 
 
-        <div className={'relative flex flex-col px-8 font-cabinet max-w-full bg-[#e0afa0]'}>
+        <div className={'hidden sm:flex relative flex-col px-8 font-cabinet max-w-full bg-[#e0afa0]'}>
             <nav className={'flex flex-col pt-12 space-y-2.5 sticky top-0 backdrop-blur-lg z-[100]'}>
                 <div className={'flex justify-between font-bold text-xs'}>
                     <span> ✶ JP23 </span>
