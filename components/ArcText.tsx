@@ -1,38 +1,40 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 
-interface ArcTextProps {
-    text: string;
-    radius: number;
-    centerX: number;
-    centerY: number;
-    angle: number;
-    startAngle: number;
-    fontSize: string
-    color: string;
-}
 
-export const ArcText = ({
-        text,
-        radius,
-        centerX,
-        centerY,
-        angle,
-        startAngle,
-        fontSize,
-        color
-}:ArcTextProps) => {
-    const path = `M ${centerX},${centerY} m ${-radius},0 a ${radius},${radius} 0 1,1 ${2 * radius},0 a ${radius},${radius} 0 1,1 ${-2 * radius},0`;
 
-    return (
-        <svg viewBox={`0 0 ${2 * (radius + parseInt(fontSize))} ${2 * (radius + parseInt(fontSize))}`}>
-            <path id="arc-path" d={path} fill="none" />
-            <text>
-                <textPath href="#arc-path" startOffset={`${startAngle * Math.PI * radius * 2 / 360}px`} textLength={`${angle * Math.PI * radius / 180}px`} style={{ fontSize, fill: color }}>
-                    {text}
-                </textPath>
-            </text>
-        </svg>
-    );
+
+export const ArcText = () => {
+    useEffect(() => {
+        const text = document.querySelector<HTMLElement>('#circle-text');
+        if(text === null){
+            console.log('hey')
+            return;
+        }
+        else if(text && text.textContent){
+            text.innerHTML = text.textContent.replace(/\S/g,
+                // "<span class='letter inline-block  text-xs sm:text-lg uppercase origin-[0_65px] sm:origin-[0_10rem] md:origin-[0_11rem] lg:origin-[0_12rem] xl:origin-[0_12rem] 2xl:origin-[0_15rem] absolute sm:top-12 md:top-[4vh] lg:top-[8vh] 2xl:top-[12.5vh] sm:left-1/2 sm:right-1/2 font-medium z-50'>$&</span>");
+                // "<span class='letter inline-block  text-xs sm:text-lg uppercase origin-[0_calc(20vh)] absolute sm:top-12 md:top-[4vh] lg:top-[8vh] 2xl:top-[12.5vh] sm:left-1/2 sm:right-1/2 font-medium z-50'>$&</span>");
+                "<span class='letter inline-block text-xs sm:text-lg uppercase origin-[0_calc(20vh)] absolute sm:top-[calc(10vh)] sm:left-1/2 sm:right-1/2 font-light z-50'>$&</span>");
+            const element = document.querySelectorAll<HTMLElement>('.letter');
+            if(element === null)
+                return;
+            else if(element){
+                element.forEach((el, index) => {
+                    el.style.transform = `rotate(${index * 15.7}deg)`;
+                });
+
+                document.addEventListener('scroll', () => {
+                    const scrollY = window.scrollY;
+                    const rotate = scrollY / 5;
+                    element.forEach((el, index) => {
+                        el.style.transform = `rotate(${index * 15.5 + rotate}deg)`;
+                    });
+                })
+            }
+        }
+    }, [])
+
+    return (<h4 id={'circle-text'} className={'bg-blue-200 circle-text text-[9px]'}> creator  ✶  designer  ✶  coder ✶ </h4>);
 }
 
 export default ArcText;
