@@ -4,6 +4,12 @@
 
 @font-face {
     font-family: 'CabinetGrotesk';
-    src: url('/fonts/cabinet-grotesk.ttf');
+    src: url('/public/fonts/cabinet-grotesk.ttf');
+    /* add additional formats as necessary */
+}
+
+@font-face {
+    font-family: 'Panchange';
+    src: url('/public/fonts/panchang.ttf');
     /* add additional formats as necessary */
 }
