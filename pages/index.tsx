@@ -1,36 +1,11 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import React, { useEffect } from "react";
+import React from "react";
 import { ArrowRightIcon, MapPinIcon } from "@heroicons/react/24/solid";
 import Model from '../components/Model';
+import { ArcText } from '@/components/ArcText';
 
 export default function Home() {
-
-    useEffect(() => {
-        const text = document.querySelector<HTMLElement>('.text');
-        if(text === null)
-            return;
-        else if(text && text.textContent){
-            text.innerHTML = text.textContent.replace(/\S/g, "<span class='letter inline-block uppercase origin-[0_70px] absolute top-20 left-24 font-medium'>$&</span>");
-
-            const element = document.querySelectorAll<HTMLElement>('.letter');
-            if(element === null)
-                return;
-            else if(element){
-                element.forEach((el, index) => {
-                    el.style.transform = `rotate(${index * 15.5}deg)`;
-                });
-
-                document.addEventListener('scroll', () => {
-                    const scrollY = window.scrollY;
-                    const rotate = scrollY / 5;
-                    element.forEach((el, index) => {
-                        el.style.transform = `rotate(${index * 15.7 + rotate}deg)`;
-                    });
-                })
-            }
-        }
-    })
 
     return (
     <>
@@ -43,8 +18,7 @@ export default function Home() {
       <main >
 
           {/* ERRORS START HERE*/}
-          <Model />
-        <div className={'mt-[30px] mb-11 px-3.5 flex flex-col items-center justify-center  font-cabinet'}>
+        <div className={'mt-[30px] mb-2 px-3.5 flex flex-col items-center justify-center  font-cabinet overflow-hidden sm:hidden'}>
             {/* card */}
             <div className={'w-[360px] h-[360px] rounded-[20px] bg-black/40 relative p-4 flex flex-col text-white bg-gradient-to-b from-rose-400/40 to-orange-300/80'}>
                 {/* image */}
@@ -125,8 +99,14 @@ export default function Home() {
             </div>
             {/* about me */}
             <div className={'relative'}>
-                <h2 className={'uppercase font-extrabold text-2xl my-11'}> about me  </h2>
-                <h4 className={'absolute top-0 right-44 text text-xs'}> creator ✶ designer ✶ coder ✶ </h4>
+                <div className={'relative flex my-6 '}>
+                    <span className={'uppercase font-extrabold whitespace-nowrap text-2xl mt-11 mb-20 '}> about me  </span>
+                    <h4 className={'circle-text text-[9px]'}> creator  ✶  designer  ✶  coder ✶ </h4>
+                    <div className={'absolute left-[123px] '}>
+                        <Model/>
+                    </div>
+                </div>
+
                 <div className={'h-[120px] w-[360px] rounded-[20px] flex items-center justify-center py-4 px-5 border border-black border-[1px] mb-3 '}>
                     <p>
                         I’m a creative developer ( he/him/his) currently based in Dallas, Texas. I’m really into CSS, animation, interaction, and learning new tools to add to my utility belt.
@@ -154,7 +134,6 @@ export default function Home() {
                     <div className={'h-[335px] w-[120px] rounded-[20px] flex flex-col items-start py-4 px-5 border border-black border-[1px]'}>
                         <span className={'border border-black rounded-full w-fit px-2.5 uppercase self-center'}> Links  </span>
                         <ul className={'mt-9 space-y-1'}>
-                            hi
                             <li className={'text-sm hover:underline'}> <a href={'https://www.linkedin.com/in/justin-lee-0a5b3b1b1/'}> LinkedIn </a> </li>
                             <li className={'text-sm hover:underline'}> <a href={'https://github.com/justinkpeter'}> Github </a> </li>
                             <li className={'text-sm hover:underline'}> <a href={'https://twitter.com/_justinpeter'}> Twitter </a> </li>
@@ -163,15 +142,147 @@ export default function Home() {
                         </ul>
                     </div>
                 </div>
-                {/* footer */}
-                <footer className={'my-12 px-5'}>
-                    <hr className={'bg-black border-black'}/>
-                    <div className={'flex justify-between text-xs uppercase py-2'}>
-                        <span> personal site </span>
-                        <span> justin peter </span>
-                    </div>
-                </footer>
+
             </div>
+            {/* footer */}
+            <footer className={'my-5 w-full px-5'}>
+                <hr className={'bg-black border-black'}/>
+                <div className={'flex justify-between text-xs uppercase py-4'}>
+                    <span> personal site </span>
+                    <span> justin peter </span>
+                </div>
+            </footer>
+        </div>
+
+
+        <div className={'relative flex flex-col px-8 font-cabinet max-w-full bg-[#e0afa0]'}>
+            <nav className={'flex flex-col pt-12 space-y-2.5 sticky top-0 backdrop-blur-lg z-[100]'}>
+                <div className={'flex justify-between font-bold text-xs'}>
+                    <span> ✶ JP23 </span>
+                    <span className={'uppercase'}> Justin Peter  </span>
+                </div>
+                <hr className={'border-black'}/>
+            </nav>
+            {/*<div className={'relative h-[calc(100vh-3rem)] w-full flex flex-col lg:pt-6 xl:pt-12 2xl:pt-20 items-center bg-blue-200 '}>*/}
+            <div className={'relative h-[calc(100vh-3rem)] w-full flex flex-col pt-[calc(5vh)] items-center'}>
+                <div className={'group'}>
+                    <Model/>
+                    <ArcText/>
+                </div>
+
+                {/*<div className={'mt-[calc(3rem)]  2xl:mt-20 flex flex-col space-y-6 lg:space-y-7 font-panchang'}>*/}
+                <div className={'mt-[calc(10vh)] flex flex-col space-y-6 lg:space-y-7 font-panchang'}>
+                    <h1 className={'uppercase text-5xl lg:text-6xl 2xl:text-7xl font-bold'}> Justin Peter </h1>
+                    <div className={'flex justify-between space-x-12 group'}>
+                        <div className={'flex flex-col'}>
+                            <h4 className={'uppercase text-xs lg:text-lg font-medium'}> Date </h4>
+                            <span className={'uppercase text-[10px] lg:text-sm font-cabinet'}> 2023 </span>
+                        </div>
+                        <div className={'flex flex-col'}>
+                            <h4 className={'uppercase text-xs lg:text-lg font-medium'}> role </h4>
+                            <span className={'uppercase text-[10px] lg:text-sm font-cabinet'}> front end dev & motion </span>
+                        </div>
+                        <div className={'flex flex-col'}>
+                            <h4 className={'uppercase text-xs lg:text-lg font-medium'}> location </h4>
+                            <span className={'uppercase text-[10px] lg:text-sm font-cabinet'}> dallas, tx</span>
+                        </div>
+                        <div className={'flex flex-col'}>
+                            <h4 className={'uppercase text-xs lg:text-lg font-medium'}> contact </h4>
+                            <span className={'uppercase text-[10px] lg:text-sm font-cabinet'}> linkedin </span>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <section className={'flex flex-col relative items-center space-y-36'}>
+                <div className={'w-3/5 h-fit  flex-col flex'}>
+                    <img
+                        src={'https://images.unsplash.com/photo-1595177663993-4849619ab1f8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1887&q=80'}
+                        alt={'image'}
+                        className={'w-full h-[360px] object-cover rounded-[20px]'}
+                    />
+                    <div className={'flex my-9'}>
+                        <span className={'text-[10px] mr-1.5 md:mr-2 lg:mr-2.5 font-medium'}> 01 </span>
+                        <div className={'flex w-full justify-between'}>
+                            <h3 className={'font-panchang font-semibold lg:text-3xl text-3xl uppercase'}> Blendify </h3>
+                            <ul>
+                                {
+                                    ['React', 'Spotify API', 'Framer Motion'].map((item) => {
+                                        return(
+                                            <li key={item} className={'text-[10px] md:text-md lg:text-sm font-cabinet'}> { item } </li>
+                                        )
+                                    })
+                                }
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div className={'w-3/5 h-fit  flex-col flex'}>
+                    <img
+                        src={'https://images.unsplash.com/photo-1488161628813-04466f872be2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1064&q=80'}
+                        alt={'image'}
+                        className={'w-full h-[360px] object-cover rounded-[20px]'}
+                    />
+                    <div className={'flex my-9'}>
+                        <span className={'text-[10px] mr-1.5 md:mr-2 lg:mr-2.5 font-medium'}> 02 </span>
+                        <div className={'flex w-full justify-between'}>
+                            <h3 className={'font-panchang font-semibold lg:text-3xl text-3xl uppercase'}>
+                                Justincredible
+                                <br/>
+                                moments
+                            </h3>
+                            <ul>
+                                {
+                                    ['NextJS', 'TailwindCSS', 'UI/UX Design'].map((item) => {
+                                        return(
+                                            <li key={item} className={'text-[10px] md:text-md lg:text-sm font-cabinet'}> { item } </li>
+                                        )
+                                    })
+                                }
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section className={'mt-64 flex flex-col relative items-center'}>
+                <h3 className={'text-5xl uppercase font-panchang font-semibold w-3/5'}> creative developer </h3>
+                <p className={'my-14 w-3/5'}>
+                    I’m Justin Peter (he/him/his), with a degree in Computer Engineering from the University of South Florida. I’m a creative developer who is really into animation, interaction, and learning new tools to add to my utility belt. What gets me excited is creating user experiences one line of code at a time; I believe it is through these user experiences, people can truly connect.
+                </p>
+                <div className={'w-3/5 flex justify-between space-x-9'}>
+                    <div className={'h-40 w-full p-5 rounded-[10px] border border-black '}>
+                        <span className={'h-6 w-28 border border-black rounded-full px-4 uppercase font-bold'}> Availability</span>
+                        <p className={'my-8'}>
+                            I'm taking on projects on a case-by-case basis. If you’re interested, reach out and touch faith.
+                        </p>
+                    </div>
+
+                    <div className={'h-40 w-full p-5 rounded-[10px] border border-black '}>
+                        <span className={'h-6 w-28 border border-black rounded-full px-4 uppercase font-bold'}> Contact </span>
+                        <p className={'my-8'}>
+                            I’m most active and reachable via email. You can also check out my resume, if you’re into that sort of thing.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <section className={'mt-[26.5rem] font-panchang flex flex-col items-center'}>
+                <h4 className={'uppercase text-xl font-light'}> I'd love to work with you </h4>
+                <h2 className={'uppercase text-7xl font-bold stroke-black'} style={{WebkitTextStroke: '1px', WebkitTextStrokeColor:'#000000', WebkitTextFillColor: 'transparent' }}> work with me </h2>
+            </section>
+
+            <footer className={'mt-[21rem] mb-7'}>
+                <hr className={'border-black mb-4'}/>
+                <div className={'flex justify-between items-center  uppercase font-base'}>
+                    <span className={'text-[10px] md:text-sm lg:text-md font-cabinet'}> © 2023 Justin Peter </span>
+                    <span className={'text-[10px] md:text-sm lg:text-md font-cabinet'}> Software Engineer </span>
+                    <span className={'text-[10px] md:text-sm lg:text-md font-cabinet'}> Built with NextJS & Tailwindcss </span>
+                </div>
+            </footer>
+
         </div>
       </main>
     </>
