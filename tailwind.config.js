@@ -10,7 +10,7 @@ module.exports = {
   theme: {
     extend: {},
     fontFamily:{
-        'cabinet': ['CabinetGrotesk', 'sans-serif'],
+        'cabinet': ['Cabinet Grotesk', 'sans-serif'],
         'panchang': ['Panchang', 'sans-serif'],
     }
   },

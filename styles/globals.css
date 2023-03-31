@@ -3,13 +3,16 @@
 @tailwind utilities;
 
 @font-face {
-    font-family: 'CabinetGrotesk';
-    src: url('/public/fonts/cabinet-grotesk.ttf');
-    /* add additional formats as necessary */
+    font-family: 'Cabinet Grotesk';
+    src: url('/public/fonts/cabinet-grotesk.woff2') format('woff2'),
+         url('/public/fonts/cabinet-grotesk.woff') format('woff'),
+         url('/public/fonts/cabinet-grotesk.ttf') format('truetype');
+
 }
 
 @font-face {
-    font-family: 'Panchange';
-    src: url('/public/fonts/panchang.ttf');
-    /* add additional formats as necessary */
+    font-family: 'Panchang';
+    src: url('/public/fonts/panchang.woff2') format('woff2'),
+        url('/public/fonts/panchang.woff') format('woff'),
+        url('/public/fonts/panchang.ttf') format('truetype');
 }
