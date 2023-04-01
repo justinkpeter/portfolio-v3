@@ -1,4 +1,5 @@
 import React from "react";
+import {Bars2Icon} from "@heroicons/react/24/solid";
 
 export const Navbar = () => {
     const Spinner = () => {
@@ -21,7 +22,7 @@ export const Navbar = () => {
                     <Spinner/>
                     <span> JP23 </span>
                 </span>
-                <div> menu </div>
+                <div className={'sm:hidden'}> <Bars2Icon className={'h-8 w-8'}/> </div>
             </nav>
         </>
     );

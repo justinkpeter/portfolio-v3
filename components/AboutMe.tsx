@@ -8,20 +8,20 @@ export const AboutMe = () => {
 
     return (
         <>
-            <section id={'about-me'} className={'relative h-fit my-36'}>
+            <section id={'about-me'} className={'relative h-fit  my-24 sm:my-36'}>
                 <Divider showLabels={true} labels={dividerLabels}/>
-                <div className={'md:text-5xl lg:text-7xl relative font-bold font-panchang uppercase pt-16 lg:pt-28 pl-[10rem] lg:pl-[16rem] h-fit'}>
+                <div className={'text-4xl md:text-5xl lg:text-7xl relative font-bold font-panchang uppercase pt-16 lg:pt-28 sm:pl-[10rem] lg:pl-[16rem] h-fit'}>
                     <div className={'flex flex-col relative space-y-3 w-full'}>
                         <h1> portraits, </h1>
                         <Image src={'/images/portrait.jpg'} width={1280} height={1280} alt={`hey, it's me`} className={'relative w-3/4 h-[40vh] object-cover object-center'}/>
                         <h1> coding, </h1>
                         <h1> music. </h1>
                     </div>
-                    <div className={'relative w-full lg:w-3/4 h-fit text-xl flex sm:flex-col sm:space-y-6 lg:flex-row py-6 lg:py-0 lg:space-y-0 normal-case font-cabinet font-medium mt-10 '}>
-                        <div className={'w-full lg:w-1/2 uppercase text-xl md:text-2xl lg:text-3xl flex flex-col '}>
+                    <div className={'relative w-full lg:w-3/4 h-fit text-xl flex flex-col sm:space-y-6 sm:flex-row py-0 space-y-6 sm:py-6 lg:py-0 lg:space-y-0 normal-case font-cabinet font-medium mt-8 sm:mt-10 '}>
+                        <div className={'w-full font-bold lg:w-1/2 uppercase text-xl md:text-2xl lg:text-3xl  '}>
                             <h5>The Holy Trinity to my life</h5>
                         </div>
-                        <div className={'w-3/4 lg:w-1/2 flex sm:flex-col text-2xl relative'}>
+                        <div className={' w-full sm:w-3/4 lg:w-1/2 flex flex-col text-lg sm:text-xl md:text-2xl relative'}>
                             <p className={'w-full'}>
                                 For me, coding is more than just combining ones and zeros. It’s about fostering community and pushing the
                                 boundaries of our imaginations.
