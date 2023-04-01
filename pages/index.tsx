@@ -22,7 +22,7 @@ export default function Home() {
       </Head>
       <main >
           <div className={'relative flex flex-col w-screen items-center'}>
-              <div className={'px-[5vw] w-screen max-w-screen-2xl'}>
+              <div className={'px-[5vw] w-screen max-w-[2038px]'}>
                   <Navbar/>
                   <Hero/>
                   <Introduction/>
