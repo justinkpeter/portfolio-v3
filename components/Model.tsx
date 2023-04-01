@@ -74,7 +74,6 @@ export default function Model() {
             renderer.setSize(canvasContainer.offsetWidth, canvasContainer.offsetHeight);
             canvasContainer.appendChild(renderer.domElement);
             window.addEventListener('resize', () => {
-                console.log('resizing');
                 renderer.setSize(canvasContainer.offsetWidth, canvasContainer.offsetHeight);
             });
         }
@@ -83,18 +82,7 @@ export default function Model() {
 
     return (
         <>
-            <div className={'sm:hidden'}>
-                <Canvas  camera={{ position: [0, 0, 8.25], fov: 4.3 }} style={{width: '100%'}} className={'relative max-w-fit sm:bg-red-300 sm:w-full'}>
-                    <ambientLight intensity={0.5} />
-                    <spotLight intensity={0.8} position={[300, 300, 400]} />
-                    <Suspense fallback={null}>
-                        <DynamicModel url={'/models/model.glb'} position={[0, -1.70, 0]} />
-                    </Suspense>
-                    <CameraControls />
-                </Canvas>
-            </div>
-
-            <div id={'canvas-container'} className={'hidden sm:flex h-[calc(50vh)] w-[calc(40vw)] relative '}>
+            <div id={'canvas-container'} className={'h-[calc(50vh)] w-[calc(40vw)] relative'}>
                 <Canvas  camera={{ position: [0.2, 0.6, 8.25], fov: 5 }}  className={''}>
                     {/*<ambientLight intensity={0.5} />*/}
                     <spotLight intensity={0.8} position={[300, 300, 400]} />
