@@ -33,7 +33,7 @@ export const Hero = () => {
 
     return (
         <>
-            <section className={'relative h-[calc(100vh-3rem)] w-full flex flex-col sm:pt-[calc(5vh)] items-center sm:my-16 z-0'}>
+            <section id={'hero'} className={'relative h-[calc(100vh-3rem)] w-full flex flex-col sm:pt-[calc(5vh)] items-center sm:my-16 z-0'}>
                 <Model/>
                 <div className={'sm:hidden flex items-center justify-center'}>
                     <div className={'rounded-full bg-yellow-500/40 w-72 h-72 absolute top-[8.5vh] -z-[40]'}/>
