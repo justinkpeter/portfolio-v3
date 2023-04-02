@@ -16,3 +16,8 @@
         url('/public/fonts/panchang.woff') format('woff'),
         url('/public/fonts/panchang.ttf') format('truetype');
 }
+
+html {
+    scroll-behavior: smooth;
+}
+
