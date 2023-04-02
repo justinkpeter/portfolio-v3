@@ -22,7 +22,7 @@ export const Introduction = () => {
             <section id={'introduction'} className={'w-full font-cabinet pt-[30vh] pb-[5vh] relative'}>
                 <Header/>
                 <Divider showLabels={true} labels={dividerLabels}/>
-                <div className={' text-base sm:text-2xl lg:text-4xl sm:ml-64 mt-16 sm:mt-28 sm:pl-2 font-medium uppercase'}>
+                <div className={' text-base sm:text-2xl lg:text-4xl sm:ml-64 sm:mt-28 pl-2 font-medium uppercase'}>
                     Standing at the intersection of imagination and technology, I create memorable web experiences. My approach is simple:
                     build innovative solutions that are both creative and functional.
                     <br/>
