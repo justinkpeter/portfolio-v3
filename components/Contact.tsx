@@ -8,7 +8,7 @@ export const Contact = () => {
     return (
         <>
             <>
-                <section id={'about-me'} className={'relative h-fit pt-20 sm:pt-[45vh]'}>
+                <section id={'contact'} className={'relative h-fit pt-20 sm:pt-[45vh]'}>
                     <Divider showLabels={true} labels={dividerLabels}/>
                     <div className={'text-6xl sm:text-5xl lg:hidden lg:text-8xl  relative font-semibold font-panchang uppercase my-[14vw] lg:pl-[16rem]  break-words underline'}>
                         <a> hello@</a><br/>
