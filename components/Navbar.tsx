@@ -1,5 +1,6 @@
 import React from "react";
 import {Bars2Icon} from "@heroicons/react/24/solid";
+import {scrollIntoView} from "@/utils/functions";
 
 export const Navbar = () => {
     const Spinner = () => {
@@ -17,12 +18,23 @@ export const Navbar = () => {
 
     return (
         <>
-            <nav className={'sticky top-0 h-full w-full pt-6 flex justify-between uppercase text-lg z-[100] '}>
-                <span className={'flex items-center'}>
+            <nav className={'sticky top-0 h-full w-full pt-6 flex justify-between uppercase text-lg z-[100] scroll-smooth '}>
+                <span className={'flex items-center cursor-pointer'} onClick={() => {scrollIntoView('hero')}}>
                     <Spinner/>
                     <span> JP23 </span>
                 </span>
                 <div className={'sm:hidden'}> <Bars2Icon className={'h-8 w-8'}/> </div>
+                <div className={'hidden sm:flex gap-2 items-center font-medium text-lg'}>
+                    { ['about', 'projects', 'contact'].map((item, index) => {
+                        return(
+                            <span key={index}
+                               onClick={() => {scrollIntoView(item)}}
+                               className="cursor-pointer pb-1 hover:before:scale-x-100  hover:before:origin-left relative before:w-full before:h-1 before:origin-right before:transition-transform before:duration-300 before:scale-x-0 before:bg-black before:absolute before:left-0 before:bottom-0 ">
+                                {item}
+                            </span>
+                        )
+                    })}
+                </div>
             </nav>
         </>
     );
