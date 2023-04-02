@@ -8,7 +8,7 @@ export const AboutMe = () => {
 
     return (
         <>
-            <section id={'about-me'} className={'relative h-fit  my-24 sm:my-36'}>
+            <section id={'about'} className={'relative h-fit  my-24 pt-14 sm:my-36'}>
                 <Divider showLabels={true} labels={dividerLabels}/>
                 <div className={'text-4xl md:text-5xl lg:text-7xl relative font-bold font-panchang uppercase pt-16 lg:pt-28 sm:pl-[10rem] lg:pl-[16rem] h-fit'}>
                     <div className={'flex flex-col relative space-y-3 w-full'}>
