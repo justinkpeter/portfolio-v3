@@ -59,7 +59,7 @@ export const Hero = () => {
                                 return (
                                     <li key={index} className={'flex flex-col'}>
                                         <h4 className={'uppercase text-xs lg:text-xl font-medium'}> {info.title} </h4>
-                                        <a className={'uppercase text-[10px] lg:text-lg font-cabinet z-[50] hover:text-yellow-500 hover:underline'} href={'https://www.linkedin.com/in/justinkmpeter/'}  target={'_blank'} rel={'noopener noreferrer'}>
+                                        <a className={'uppercase text-[10px] sm:text-sm md:text-base lg:text-lg font-cabinet z-[50] hover:text-yellow-500 hover:underline'} href={'https://www.linkedin.com/in/justinkmpeter/'}  target={'_blank'} rel={'noopener noreferrer'}>
                                             {info.subtitle}
                                         </a>
                                     </li>
@@ -68,7 +68,7 @@ export const Hero = () => {
                             return (
                                 <li key={index} className={'flex flex-col'}>
                                     <h4 className={'uppercase text-xs lg:text-xl font-medium'}> {info.title} </h4>
-                                    <span className={'uppercase text-[10px] lg:text-lg font-cabinet'}> {info.subtitle} </span>
+                                    <span className={'uppercase text-[10px] sm:text-sm md:text-base lg:text-lg font-cabinet'}> {info.subtitle} </span>
                                 </li>
                             )
                         })}

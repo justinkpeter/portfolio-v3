@@ -22,7 +22,7 @@ export const Introduction = () => {
             <section id={'introduction'} className={'w-full font-cabinet pt-[30vh] pb-[5vh] relative'}>
                 <Header/>
                 <Divider showLabels={true} labels={dividerLabels}/>
-                <div className={' text-base sm:text-2xl lg:text-4xl sm:ml-64 sm:mt-28 pl-2 font-medium uppercase'}>
+                <div className={'text-base sm:text-2xl lg:text-4xl md:ml-64 sm:mt-28 pl-2 font-medium uppercase'}>
                     Standing at the intersection of imagination and technology, I create memorable web experiences. My approach is simple:
                     build innovative solutions that are both creative and functional.
                     <br/>
@@ -32,8 +32,8 @@ export const Introduction = () => {
                     my photography portfolio, or watching anime.
                     <br/>
                     <br/>
-                    <div className={'relative  normal-case w-full flex sm:flex-col md:flex-row gap-2 sm:gap-10 lg:space-x-44  pt-6 lg:pt-12'}>
-                        <div className={'w-fit lg:w-86'}> A perfect blend of UI and product engineering. </div>
+                    <div className={'relative normal-case w-full flex sm:flex-col md:flex-row gap-2 sm:gap-10 lg:space-x-44  pt-6 lg:pt-12 text-black/80'}>
+                        <div className={'w-fit lg:w-86 hover:text-black/20 hover:italic hover:font-bold transition-all duration-300'}> A perfect blend of UI and product engineering. </div>
                         <div className={'relative w-full flex flex-col sm:space-y-12'}>
                             <p className={'w-full hidden sm:flex'}>
                                 As a design-savvy software engineer,  I collaborate with design-focused teams to craft websites and applications that
