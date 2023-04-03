@@ -15,7 +15,7 @@ export const Introduction = () => {
         )
     }
 
-    const dividerLabels: string[] = ['1.0', 'Software Engineer', 'Something'];
+    const dividerLabels: string[] = ['1.0', 'Software Engineer', 'maker of things'];
 
     return (
         <>
@@ -32,8 +32,11 @@ export const Introduction = () => {
                     my photography portfolio, or watching anime.
                     <br/>
                     <br/>
-                    <div className={'relative normal-case w-full flex sm:flex-col md:flex-row gap-2 sm:gap-10 lg:space-x-44  pt-6 lg:pt-12 text-black/80'}>
-                        <div className={'w-fit lg:w-86 hover:text-black/20 hover:italic hover:font-bold transition-all duration-300'}> A perfect blend of UI and product engineering. </div>
+                    <div className={'relative normal-case w-full flex sm:flex-col xl:flex-row gap-2 sm:gap-10  pt-6 lg:pt-12 text-black/80'}>
+                        <div
+                            data-cursor-text={'BRIDGING THE GAP ✶'}
+                            data-cursor-text-repeat="2"
+                            className={'cursor-hover-item w-fit h-fit lg:w-86 hover:text-teal-900/80 hover:italic transition-all duration-300'}> A perfect blend of UI and product engineering. </div>
                         <div className={'relative w-full flex flex-col sm:space-y-12'}>
                             <p className={'w-full hidden sm:flex'}>
                                 As a design-savvy software engineer,  I collaborate with design-focused teams to craft websites and applications that

@@ -20,10 +20,13 @@ export const Contact = () => {
                         <a href={`mailto: ${userData.email}?subject=Hi Justin!`}> peter</a><br/>
                         <a href={`mailto: ${userData.email}?subject=Hi Justin!`}> .dev</a>
                     </div>
-                    <ul className={'hidden xl:flex text-5xl sm:text-5xl lg:text-8xl lg:flex-col relative font-bold font-panchang uppercase my-24  sm:break-words lg:break-normal underline'}>
-                        <li><a href={`mailto: ${userData.email}?subject=Hi Justin!`}> hello@justin</a></li>
-                        <li><a href={`mailto: ${userData.email}??subject=Hi Justin!`}> peter.dev </a></li><br/>
-                    </ul>
+                    <div
+                        data-cursor-text={'EMAIL ME *'}
+                        data-cursor-text-repeat="4"
+                        className={'cursor-hover-item  hidden xl:flex text-5xl sm:text-5xl lg:text-8xl lg:flex-col relative font-bold font-panchang uppercase my-24  sm:break-words lg:break-normal underline'}>
+                        <a href={`mailto: ${userData.email}?subject=Hi Justin!`}> hello@justin</a>
+                        <a href={`mailto: ${userData.email}??subject=Hi Justin!`}> peter.dev </a><br/>
+                    </div>
                 </section>
             </>
         </>
