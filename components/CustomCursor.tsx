@@ -93,7 +93,7 @@ export const CustomCursor = () => {
             );
 
             gsap.to(cursorInner, hoverEffectDuration, {
-                scale: 2
+                scale: 4
             });
 
             gsap.fromTo(
