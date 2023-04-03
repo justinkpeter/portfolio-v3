@@ -24,7 +24,7 @@ export const Navbar = () => {
                     <span> JP23 </span>
                 </span>
                 <div className={'sm:hidden'}> <Bars2Icon className={'h-8 w-8'}/> </div>
-                <div className={'hidden sm:flex gap-2 items-center font-medium text-lg'}>
+                <div className={'hidden sm:flex gap-2 items-center font-medium text-xs sm:text-sm md-text-base xl:text-lg'}>
                     { ['about', 'projects', 'contact'].map((item, index) => {
                         return(
                             <span key={index}

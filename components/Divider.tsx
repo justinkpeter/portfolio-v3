@@ -11,7 +11,7 @@ export const Divider = (props:DividerProps) => {
             <hr className={'border-black my-2 border-[1px]'}/>
             {
                 props.showLabels && props.labels && props.labels.length > 0 ?
-                    <div className={'flex w-full font-medium text-xs sm:text-sm xl:text-lg uppercase'}>
+                    <div className={'flex w-full font-medium text-xs sm:text-sm md-text-base xl:text-lg uppercase'}>
                         <span className={'mr-12 sm:mr-60'}> { props.labels[0] }  </span>
                         <div className={'flex justify-between w-full'}>
                             <span className={''}> {props.labels[1]} </span>
