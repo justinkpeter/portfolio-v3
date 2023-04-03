@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import Image from 'next/image'
 import React from "react";
 import {Navbar} from "@/components/Navbar";
 import {Hero} from "@/components/Hero";
@@ -21,8 +20,9 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main >
-          <div className={'relative flex flex-col w-screen items-center'}>
-              <div className={'px-[5vw] w-screen max-w-[2038px]'}>
+          {/*<CustomCursor/>*/}
+          <div className={'relative bg-[#f1e7e4] flex flex-col w-screen items-center cursor-none selection:bg-stone-400 selection:text-white'}>
+              <div className={'relative px-[5vw] w-screen max-w-[2038px]'}>
                   <Navbar/>
                   <Hero/>
                   <Introduction/>
