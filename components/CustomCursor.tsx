@@ -21,7 +21,7 @@ export const CustomCursor = () => {
 
         setTimeout(() => {
             initialCursorHeight = circleType.container.style.getPropertyValue("height");
-            console.log(initialCursorHeight);
+            // console.log(initialCursorHeight);
         }, 50);
 
         hoverItems.forEach((item) => {
