@@ -2,12 +2,14 @@ import Model from "@/components/Model";
 import {CircleText} from "@/components/CircleText";
 import React from "react";
 import {ArrowLongDownIcon} from "@heroicons/react/24/solid";
+import {userData} from "@/utils/userData";
 
 export const Hero = () => {
 
     type HeroInfoTypes = {
         title: string,
         subtitle: string
+        link?: string
     }[];
 
     const heroInfo:HeroInfoTypes = [
@@ -25,11 +27,10 @@ export const Hero = () => {
         },
         {
             title: 'Contact',
-            subtitle: 'linkedin'
+            subtitle: 'linkedin',
+            link: userData.socials.find((social) => social.name === 'linkedin')?.link
         }
     ]
-
-
 
     return (
         <>
@@ -53,6 +54,17 @@ export const Hero = () => {
                     <h1 className={'uppercase text-4xl md:text-5xl lg:text-6xl 2xl:text-7xl font-bold'}> Justin Peter </h1>
                     <ul className={'flex justify-between  w-full'}>
                         {heroInfo.map((info, index) => {
+                            //if last item, add a class to remove the border
+                            if(index === heroInfo.length - 1){
+                                return (
+                                    <li key={index} className={'flex flex-col'}>
+                                        <h4 className={'uppercase text-xs lg:text-xl font-medium'}> {info.title} </h4>
+                                        <a className={'uppercase text-[10px] lg:text-lg font-cabinet z-[50] hover:text-yellow-500 hover:underline'} href={'https://www.linkedin.com/in/justinkmpeter/'}  target={'_blank'} rel={'noopener noreferrer'}>
+                                            {info.subtitle}
+                                        </a>
+                                    </li>
+                                )
+                            }
                             return (
                                 <li key={index} className={'flex flex-col'}>
                                     <h4 className={'uppercase text-xs lg:text-xl font-medium'}> {info.title} </h4>
