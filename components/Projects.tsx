@@ -32,7 +32,7 @@ export const Projects = ({projects}:ProjectsProps) => {
                                     >
                                         {project.title}
                                     </Link>
-                                    <p className={'uppercase  md:text-2xl lg:text-3xl w-72 sm:ml-[25%] mt-10 sm:mt-20 font-medium '}> {project.description} </p>
+                                    <p className={'uppercase  md:text-2xl lg:text-3xl md:w-72 sm:ml-[25%] mt-10 sm:mt-20 font-medium '}> {project.description} </p>
                                 </div>
                                 <Link className={'relative w-full sm:w-1/2 group transition-all duration-300 show-cursor z-0 cursor-hover-item'}
                                     style={{
