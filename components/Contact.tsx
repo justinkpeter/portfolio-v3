@@ -11,7 +11,10 @@ export const Contact = () => {
             <>
                 <section id={'contact'} className={'relative h-fit pt-20 sm:pt-[45vh]'}>
                     <Divider showLabels={true} labels={dividerLabels}/>
-                    <div className={'text-6xl sm:text-6xl md:text-7xl xl:hidden lg:text-8xl  relative font-semibold font-panchang uppercase my-[14vw] xl:pl-[16rem]  break-words underline'}>
+                    <div
+                        data-cursor-text={'EMAIL ME *'}
+                        data-cursor-text-repeat="3"
+                        className={'cursor-hover-item text-6xl sm:text-6xl md:text-7xl xl:hidden lg:text-8xl  relative font-semibold font-panchang uppercase my-[14vw] xl:pl-[16rem]  break-words underline'}>
                         <a href={`mailto: ${userData.email}?subject=Hi Justin!`}> hello@</a><br/>
                         <a href={`mailto: ${userData.email}?subject=Hi Justin!`}> justin</a><br/>
                         <a href={`mailto: ${userData.email}?subject=Hi Justin!`}> peter</a><br/>
