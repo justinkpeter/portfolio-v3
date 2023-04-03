@@ -74,7 +74,6 @@ export default function Model() {
         const canvasContainer = document.getElementById('canvas-container') ;
         const renderer = new THREE.WebGLRenderer({ antialias: true });
         if(canvasContainer){
-            console.log('got canvas container');
             renderer.setSize(canvasContainer.offsetWidth, canvasContainer.offsetHeight);
             canvasContainer.appendChild(renderer.domElement);
             window.addEventListener('resize', () => {

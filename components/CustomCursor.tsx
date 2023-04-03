@@ -133,7 +133,7 @@ export const CustomCursor = () => {
             circleType.destroy();
 
             cursorTextEl.innerHTML = cursorText;
-            console.log(cursorTextEl.innerHTML);
+            // console.log(cursorTextEl.innerHTML);
             circleType = new CircleType(cursorTextEl);
         }
 
