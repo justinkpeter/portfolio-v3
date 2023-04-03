@@ -21,3 +21,39 @@ html {
     scroll-behavior: smooth;
 }
 
+.cursor .cursor--small,
+.cursor .cursor--large,
+.cursor .cursor--text {
+    position: fixed;
+    left: 0;
+    top: 0;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    width: var(--cursor-size);
+    height: var(--cursor-size);
+    mix-blend-mode: difference;
+    pointer-events: none;
+    user-select: none;
+    z-index: 999999;
+}
+.cursor .cursor--text {
+    --cursor-size: fit-content;
+    font-size: 1rem;
+    color: #fff;
+    opacity: 0;
+}
+.cursor .cursor--text .text {
+    font-family: "Cabinet Grotesk", sans-serif;
+    font-weight: bold;
+    z-index: 999999;
+    mix-blend-mode: difference;
+    color: #ffffff
+}
+.cursor .cursor--small {
+    --cursor-size: 20px;
+    background: #ffffff;
+}
+.cursor .cursor--large {
+    --cursor-size: 60px;
+    border: 1px solid #ffffff;
+}
