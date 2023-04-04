@@ -1,5 +1,14 @@
 import React, { useEffect } from "react";
+
+declare global {
+    interface Window {
+        gsap: any;
+    }
+}
+
 export const CustomCursor = () => {
+
+
 
     useEffect(() =>{
         if(typeof window !== 'undefined') {
