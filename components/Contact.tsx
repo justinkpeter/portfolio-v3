@@ -4,7 +4,7 @@ import {userData} from "@/utils/userData";
 
 export const Contact = () => {
 
-    const dividerLabels: string[] = ['4.0', `Let's work together`, `Say hello (don't be shy)`];
+    const dividerLabels: string[] = ['4.0', `Let's work 2Gether`, `Say hello (don't be shy)`];
 
     return (
         <>

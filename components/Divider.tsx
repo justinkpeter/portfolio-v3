@@ -8,7 +8,7 @@ type DividerProps = {
 export const Divider = (props:DividerProps) => {
     return (
         <>
-            <hr className={'border-black my-2 border-[1px]'}/>
+            <hr className={'border-black dark:border-white my-2 border-[1px]'}/>
             {
                 props.showLabels && props.labels && props.labels.length > 0 ?
                     <div className={'flex w-full font-medium text-xs sm:text-sm md-text-base xl:text-lg uppercase'}>
