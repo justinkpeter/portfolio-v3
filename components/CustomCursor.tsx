@@ -2,13 +2,14 @@
 
 import React, { useEffect } from "react";
 import { gsap } from "gsap";
+import  CircleType  from "circletype";
 export const CustomCursor = () => {
 
 
 
     useEffect(() =>{
         if(typeof window !== 'undefined') {
-            const {  CircleType } = window;
+            // const {  CircleType } = window;
 
             const cursorOuter = document.querySelector(".cursor--large");
             const cursorInner = document.querySelector(".cursor--small");
