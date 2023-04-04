@@ -39,6 +39,7 @@ const CameraControls = () => {
              autoRotate={true}
              autoRotateSpeed={-3} reverseOrbit={true}
              enablePan={false}
+             enableZoom={false}
              enableDamping={true}
              minPolarAngle={Math.PI/2}
              maxPolarAngle={Math.PI/2}
