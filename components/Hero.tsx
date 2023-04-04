@@ -1,5 +1,5 @@
 import Model from "@/components/Model";
-import {CircleText} from "@/components/CircleText";
+// import {CircleText} from "@/components/CircleText";
 import React from "react";
 import {ArrowLongDownIcon} from "@heroicons/react/24/solid";
 import {userData} from "@/utils/userData";
@@ -47,8 +47,8 @@ export const Hero = () => {
                     </p>
                   </div>
                   <div className={'absolute top-[35.5rem] -right-[2rem] rounded-full w-32 h-32 flex items-center justify-center'}>
-                    <ArrowLongDownIcon className={'absolute w-9 h-9'}/>
-                    <CircleText text={'Scroll Down ✶ Scroll Down ✶ '} width={32}/>
+                    {/*<ArrowLongDownIcon className={'absolute w-9 h-9'}/>*/}
+                    {/*<CircleText text={'Scroll Down ✶ Scroll Down ✶ '} width={32}/>*/}
                   </div>
                 <div className={'hidden sm:flex flex-col space-y-6 lg:space-y-7 font-panchang items-center'}>
                     <h1 className={'uppercase text-4xl md:text-5xl lg:text-6xl 2xl:text-7xl font-bold'}> Justin Peter </h1>
