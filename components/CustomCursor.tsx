@@ -2,7 +2,7 @@
 
 import React, { useEffect } from "react";
 import { gsap } from "gsap";
-import  CircleType  from "circletype";
+// import  CircleType  from "circletype";
 export const CustomCursor = () => {
 
 
