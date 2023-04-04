@@ -149,7 +149,7 @@ export const CustomCursor = () => {
 
     return(
         <>
-            <div className="cursor">
+            <div className="hidden sm:flex flex-col cursor">
                 <div className="cursor--small"></div>
                 <div className="cursor--large"></div>
                 <div className="cursor--text">
