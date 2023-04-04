@@ -64,7 +64,7 @@ export const Navbar = ({children}:MyProps) => {
                         </label>
                         <div className={'drawer w-full h-full drawer-end'}>
                             <input id="my-drawer-4" type="checkbox" className={'drawer-toggle'} />
-                            <div className={'drawer-content w-full h-screen flex flex-col overflow-x-hidden overflow-y-scroll px-[5vw] max-w-[2038px] relative dark:text-white dark:bg-stone-400'}>
+                            <div className={'drawer-content w-full h-screen flex flex-col overflow-x-hidden overflow-y-scroll px-[5vw] max-w-[2038px] relative dark:text-zinc-800 dark:bg-stone-400'}>
                                 <Navbar2/>
                                 {children}
                             </div>
