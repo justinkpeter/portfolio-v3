@@ -1,16 +1,25 @@
 import * as React from 'react';
-import { useRef, useEffect } from 'react';
-import dynamic from 'next/dynamic';
 import * as THREE from 'three';
-// import {Canvas, useThree, extend, useFrame} from 'react-three-fiber';
+import dynamic from 'next/dynamic';
+import { useRef, useEffect } from 'react';
+import {Suspense} from "react";
 import {Canvas, useThree, extend, useFrame} from '@react-three/fiber';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
-// import { useLoader } from 'react-three-fiber';
 import { useLoader } from '@react-three/fiber';
-import {Suspense} from "react";
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
+import {Vector3, SkinnedMesh } from "three";
 
 extend({ OrbitControls })
+
+declare global {
+    namespace JSX {
+        interface IntrinsicElements {
+            orbitControls: any;
+        }
+    }
+}
+
+type GroupProps = JSX.IntrinsicElements['group']
 
 const CameraControls = () => {
     const {
@@ -23,25 +32,23 @@ const CameraControls = () => {
         controlsRef.current?.update()
     })
 
-    // @ts-ignore
     return (
-        <orbitControls
-            ref={controlsRef}
-            args={[camera, domElement]}
-            enableZoom={false}
-            autoRotate={true}
-            autoRotateSpeed={-3}
-            reverseOrbit={true}
-            enablePan={false}
-            enableDamping={true}
-            minPolarAngle={Math.PI/2}
-            maxPolarAngle={Math.PI/2}
-        />
+         <orbitControls
+             attach={"orbitControls"}
+             args={[camera, domElement]}
+             autoRotate={true}
+             autoRotateSpeed={-3} reverseOrbit={true}
+             enablePan={false}
+             enableDamping={true}
+             minPolarAngle={Math.PI/2}
+             maxPolarAngle={Math.PI/2}
+             ref={controlsRef}
+         />
     )
 }
 interface ModelProps {
     url: string;
-    position: number[];
+    position: Vector3 | GroupProps['position'];
 }
 
 function JustinGLB(props: ModelProps) {
@@ -49,16 +56,45 @@ function JustinGLB(props: ModelProps) {
     // load model and add it to the scene
     const gltf = useLoader(GLTFLoader, url);
     const  { nodes }  = gltf || {};
+
+    // type casting nodes to properly render three.js model
+    const hairMesh = nodes.Wolf3D_Hair as SkinnedMesh;
+    const eyeMeshLeft = nodes.EyeLeft as SkinnedMesh;
+    const eyeMeshRight = nodes.EyeRight as SkinnedMesh;
+    const headMesh = nodes.Wolf3D_Head as SkinnedMesh;
+
     return(
         <>
             <group {...props} dispose={null}>
                 { nodes && (
                     <>
                         <primitive object={nodes.Hips} />
-                        <skinnedMesh geometry={nodes.Wolf3D_Hair.geometry} material={nodes.Wolf3D_Hair.material} skeleton={nodes.Wolf3D_Hair.skeleton} />
-                        <skinnedMesh name="EyeLeft" geometry={nodes.EyeLeft.geometry} material={nodes.EyeLeft.material} skeleton={nodes.EyeLeft.skeleton} morphTargetDictionary={nodes.EyeLeft.morphTargetDictionary} morphTargetInfluences={nodes.EyeLeft.morphTargetInfluences} />
-                        <skinnedMesh name="EyeRight" geometry={nodes.EyeRight.geometry} material={nodes.EyeRight.material} skeleton={nodes.EyeRight.skeleton} morphTargetDictionary={nodes.EyeRight.morphTargetDictionary} morphTargetInfluences={nodes.EyeRight.morphTargetInfluences} />
-                        <skinnedMesh name="Wolf3D_Head" geometry={nodes.Wolf3D_Head.geometry} material={nodes.Wolf3D_Head.material} skeleton={nodes.Wolf3D_Head.skeleton} morphTargetDictionary={nodes.Wolf3D_Head.morphTargetDictionary} morphTargetInfluences={nodes.Wolf3D_Head.morphTargetInfluences} />
+                        <skinnedMesh
+                            geometry={hairMesh.geometry}
+                            material={hairMesh.material}
+                            skeleton={hairMesh.skeleton} />
+                        <skinnedMesh name="EyeLeft"
+                             geometry={eyeMeshLeft.geometry}
+                             material={eyeMeshLeft.material}
+                             skeleton={eyeMeshLeft.skeleton}
+                             morphTargetDictionary={eyeMeshLeft.morphTargetDictionary}
+                             morphTargetInfluences={eyeMeshLeft.morphTargetInfluences}
+                        />
+                        <skinnedMesh name="EyeRight"
+                             geometry={eyeMeshRight.geometry}
+                             material={eyeMeshRight.material}
+                             skeleton={eyeMeshRight.skeleton}
+                             morphTargetDictionary={eyeMeshRight.morphTargetDictionary}
+                             morphTargetInfluences={eyeMeshRight.morphTargetInfluences}
+                        />
+                        <skinnedMesh
+                            name="Wolf3D_Head"
+                            geometry={headMesh.geometry}
+                            material={headMesh.material}
+                            skeleton={headMesh.skeleton}
+                            morphTargetDictionary={headMesh.morphTargetDictionary}
+                            morphTargetInfluences={headMesh.morphTargetInfluences}
+                        />
                     </>
                 )}
             </group>
@@ -68,11 +104,15 @@ function JustinGLB(props: ModelProps) {
 }
 
 export default function Model() {
+
+    // dynamic import of model to avoid SSR issues
     const DynamicModel = dynamic(() => Promise.resolve(JustinGLB), {
         ssr: false
     });
 
+
     useEffect(() => {
+        // resize canvas to fit container
         const canvasContainer = document.getElementById('canvas-container') ;
         const renderer = new THREE.WebGLRenderer({ antialias: true });
         if(canvasContainer){
@@ -89,7 +129,6 @@ export default function Model() {
         <>
             <div id={'canvas-container'} className={'h-[calc(50vh)] w-[calc(40vw)] relative'}>
                 <Canvas  camera={{ position: [0.2, 0.6, 8.25], fov: 5 }}  className={''}>
-                    {/*<ambientLight intensity={0.5} />*/}
                     <spotLight intensity={0.8} position={[300, 300, 400]} />
                     <Suspense fallback={null}>
                         <DynamicModel url={'/models/model.glb'} position={[0, -1.70, 0]} />
