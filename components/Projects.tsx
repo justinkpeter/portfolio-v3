@@ -34,7 +34,7 @@ export const Projects = ({projects}:ProjectsProps) => {
                                     </Link>
                                     <p className={'uppercase  md:text-2xl lg:text-3xl md:w-72 sm:ml-[25%] mt-10 sm:mt-20 font-medium '}> {project.description} </p>
                                 </div>
-                                <Link className={'relative w-full sm:w-1/2 group transition-all duration-300 show-cursor z-0 cursor-hover-item'}
+                                <Link className={'relative w-[100%] h-[60vh] sm:h-full sm:w-full sm:w-1/2 group transition-all duration-300 show-cursor z-0 cursor-hover-item'}
                                     style={{
                                         backgroundImage: `url(${project.image})`,
                                         backgroundSize: 'cover',

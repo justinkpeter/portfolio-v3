@@ -60,7 +60,7 @@ export const Navbar = ({children}:MyProps) => {
                     {/* page content */}
                     <div className={''}>
                         <label htmlFor="my-drawer-4" className="sm:hidden absolute z-[300] top-4 w-fit h-fit right-0 bg-transparent drawer-button btn btn-primary z-[200] border-0 hover:bg-inherit">
-                            <Bars2Icon className={' relative h-8 w-8 text-black'}/>
+                            <Bars2Icon className={'relative h-8 w-8 text-black dark:text-stone-600'}/>
                         </label>
                         <div className={'drawer w-full h-full drawer-end'}>
                             <input id="my-drawer-4" type="checkbox" className={'drawer-toggle'} />
@@ -70,7 +70,7 @@ export const Navbar = ({children}:MyProps) => {
                             </div>
                             <div className="drawer-side">
                                 <label htmlFor="my-drawer-4" className="drawer-overlay"/>
-                                <div className="menu p-5 pb-16  h-screen w-full bg-base-100 text-base-content relative justify-end items-end flex flex-col space-y-5 font-cabinet text-5xl font-medium uppercase ">
+                                <div className="menu p-5 pb-36  h-screen w-full bg-base-100 dark:bg-zinc-900 text-base-content dark:text-stone-400 relative justify-end items-end flex flex-col space-y-5 font-cabinet text-5xl font-medium uppercase ">
                                     {['projects', 'about', 'contact'].map((item, index) => {
                                         return(
                                             <span key={index}

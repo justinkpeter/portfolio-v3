@@ -5,7 +5,7 @@ import {userData} from "@/utils/userData";
 export const Footer = () => {
     return (
         <>
-            <footer className={'relative py-6 sm:py-8 text-xl uppercase font-medium font-medium text-xs sm:text-sm md-text-base xl:text-lg'}>
+            <footer className={'relative py-6 pb-10 sm:py-8 text-xl uppercase font-medium font-medium text-xs sm:text-sm md-text-base xl:text-lg'}>
                 <div className={'flex flex-col space-y-6 lg:flex-row justify-between lg:items-end'}>
                     <div>
                         <span> Justin Peter </span><br/>
