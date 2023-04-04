@@ -32,5 +32,5 @@
   "exclude": [
     "node_modules"
   ],
-  "types": ["gsap"]
+  "types": ["gsap", "circletype", "node"]
 }
