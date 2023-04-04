@@ -14,5 +14,5 @@ module.exports = {
         'panchang': ['Panchang', 'sans-serif'],
     }
   },
-  plugins: [],
+  plugins: [require("daisyui")],
 }
