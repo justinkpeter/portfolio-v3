@@ -35,18 +35,14 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main >
-          {/*<CustomCursor/>*/}
-          <div className={'relative bg-[#f1e7e4] flex flex-col w-screen items-center cursor-none selection:bg-stone-400 selection:text-white'}>
-              <div className={'relative px-[5vw] w-screen max-w-[2038px]'}>
-                  <Navbar/>
-                  <Hero/>
-                  <Introduction/>
-                  <Projects projects={userData.projects}/>
-                  <AboutMe/>
-                  <Contact/>
-                  <Footer/>
-              </div>
-          </div>
+          <Navbar>
+                <Hero/>
+                <Introduction/>
+                <Projects projects={userData.projects}/>
+                <AboutMe/>
+                <Contact/>
+                <Footer/>
+            </Navbar>
       </main>
     </>
   )
