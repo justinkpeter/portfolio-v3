@@ -14,7 +14,7 @@ export const CustomCursor = () => {
             const cursorOuter = document.querySelector(".cursor--large");
             const cursorInner = document.querySelector(".cursor--small");
             const cursorTextContainerEl = document.querySelector(".cursor--text");
-            const cursorTextEl = cursorTextContainerEl.querySelector(".text");
+            const cursorTextEl = cursorTextContainerEl?.querySelector(".text");
 
             const hoverItems = document.querySelectorAll(".cursor-hover-item");
             const hoverEffectDuration = 0.3;
