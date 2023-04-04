@@ -1,14 +1,14 @@
 'use client'
 
 import React, { useEffect } from "react";
-
+import { gsap } from "gsap";
 export const CustomCursor = () => {
 
 
 
     useEffect(() =>{
         if(typeof window !== 'undefined') {
-            const { gsap, CircleType } = window;
+            const {  CircleType } = window;
 
             const cursorOuter = document.querySelector(".cursor--large");
             const cursorInner = document.querySelector(".cursor--small");
