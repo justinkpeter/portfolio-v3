@@ -1,10 +1,6 @@
-import React, { useEffect } from "react";
+'use client'
 
-declare global {
-    interface Window {
-        gsap: any;
-    }
-}
+import React, { useEffect } from "react";
 
 export const CustomCursor = () => {
 
