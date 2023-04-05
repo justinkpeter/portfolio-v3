@@ -20,7 +20,7 @@ const Spinner = () => {
 const Navbar2 = () => {
     return (
         <>
-            <nav className={'sticky top-0 h-fit w-full pt-6 sm:flex justify-between uppercase text-lg z-[100] scroll-smooth '}>
+            <nav className={'px-[5vw] fixed top-0 h-fit w-full pt-6 sm:flex justify-between uppercase text-lg z-[100] scroll-smooth '}>
                 <span className={'flex items-center cursor-pointer'} onClick={() => {scrollIntoView('hero')}}>
                     <Spinner/>
                     <span> JP23 </span>
