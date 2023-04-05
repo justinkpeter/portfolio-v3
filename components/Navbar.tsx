@@ -71,12 +71,16 @@ export const Navbar = ({children}:MyProps) => {
                         <label htmlFor="my-drawer-4" className="sm:hidden absolute z-[300] top-4 w-fit h-fit right-0 bg-transparent drawer-button btn btn-primary z-[200] border-0 hover:bg-inherit">
                             <Bars2Icon className={'relative h-8 w-8 text-black dark:text-stone-600'}/>
                         </label>
-                        <div className={'drawer w-full h-full drawer-end'}>
+                        <div className={'drawer w-full h-full drawer-end relative'}>
                             <input id="my-drawer-4" type="checkbox" className={'drawer-toggle'} />
-                            <div className={'drawer-content w-full h-screen flex flex-col overflow-x-hidden overflow-y-scroll px-[5vw] max-w-[2038px] relative dark:text-zinc-800 dark:bg-stone-400'}>
+                            <div className={'drawer-content w-full h-screen flex flex-col justify-center  items-center overflow-x-hidden overflow-y-scroll px-[5vw]  relative dark:text-zinc-800 dark:bg-stone-400'}>
+                                <div className={'relative max-w-[2048px] flex flex-col items-center  w-full h-full'}>
+                                    <Navbar2/>
+                                    {children}
+                                </div>
                                 {/* app layout */}
-                                <Navbar2/>
-                                {children}
+                                {/*<Navbar2/>*/}
+                                {/*{children}*/}
                             </div>
                             <div className="drawer-side">
                                 <label htmlFor="my-drawer-4" className="drawer-overlay"/>

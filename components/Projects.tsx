@@ -16,7 +16,7 @@ export const Projects = ({projects}:ProjectsProps) => {
 
     return (
         <>
-            <section id={'projects'} className={'h-fit relative my-36 sm:my-80 pt-14 pb-10 z-0'}>
+            <section id={'projects'} className={'h-fit w-full  relative  my-20 sm:my-36 sm:my-80 pt-14 sm:pb-10 z-0'}>
                 <Divider showLabels={true} labels={dividerLabels}/>
                 <div className={'relative'}>
                     {projects.length && projects.map((project) => {

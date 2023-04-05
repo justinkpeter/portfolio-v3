@@ -9,12 +9,12 @@ export const Contact = () => {
     return (
         <>
             <>
-                <section id={'contact'} className={'relative h-fit pt-20 sm:pt-[45vh]'}>
+                <section id={'contact'} className={'relative w-full h-fit pt-20 sm:pt-[35vh] mb-5'}>
                     <Divider showLabels={true} labels={dividerLabels}/>
                     <div
                         data-cursor-text={'EMAIL ME *'}
                         data-cursor-text-repeat="3"
-                        className={'cursor-hover-item text-6xl sm:text-6xl md:text-7xl xl:hidden lg:text-8xl  relative font-semibold font-panchang uppercase my-[14vw] xl:pl-[16rem]  break-words underline'}>
+                        className={'cursor-hover-item text-5xl sm:text-6xl md:text-7xl xl:hidden lg:text-8xl  relative font-semibold font-panchang uppercase my-[14vw] xl:pl-[16rem]  break-words underline'}>
                         <a href={`mailto: ${userData.email}?subject=Hi Justin!`}> hello@</a><br/>
                         <a href={`mailto: ${userData.email}?subject=Hi Justin!`}> justin</a><br/>
                         <a href={`mailto: ${userData.email}?subject=Hi Justin!`}> peter</a><br/>

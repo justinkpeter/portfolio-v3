@@ -1,7 +1,5 @@
 import Model from "@/components/Model";
-// import {CircleText} from "@/components/CircleText";
 import React from "react";
-import {ArrowLongDownIcon} from "@heroicons/react/24/solid";
 import {userData} from "@/utils/userData";
 
 export const Hero = () => {
@@ -42,7 +40,7 @@ export const Hero = () => {
                   <div className={'sm:hidden'}>
                     <p className={'uppercase text-sm font-medium my-2.5'}> creative developer </p>
                     <h1 className={'uppercase text-5xl font-panchang font-bold'}> Justin Peter </h1>
-                    <p className={'font-medium text-lg py-5 w-52'}>
+                    <p className={'font-medium text-lg py-5 w-full'}>
                       Combining technology with visual arts to bring a unique blend of creativity and technical expertise to every project.
                     </p>
                   </div>
