@@ -4,17 +4,17 @@
 
 @font-face {
     font-family: 'Cabinet Grotesk';
-    src: url('/public/fonts/cabinet-grotesk.woff2') format('woff2'),
-         url('/public/fonts/cabinet-grotesk.woff') format('woff'),
-         url('/public/fonts/cabinet-grotesk.ttf') format('truetype');
+    src: url('/fonts/cabinet-grotesk.woff2') format('woff2'),
+         url('/fonts/cabinet-grotesk.woff') format('woff'),
+         url('/fonts/cabinet-grotesk.ttf') format('truetype');
 
 }
 
 @font-face {
     font-family: 'Panchang';
-    src: url('/public/fonts/panchang.woff2') format('woff2'),
-        url('/public/fonts/panchang.woff') format('woff'),
-        url('/public/fonts/panchang.ttf') format('truetype');
+    src: url('/fonts/panchang.woff2') format('woff2'),
+        url('/fonts/panchang.woff') format('woff'),
+        url('/fonts/panchang.ttf') format('truetype');
 }
 
 html {
