@@ -29,13 +29,13 @@ export const userData:UserType = {
     projects: [
         {
             title: "Blendify",
-            description: "An anaysis and discovery tool for spotify users",
+            description: "An analysis and discovery tool for spotify users",
             link: "https://blendifyv2.netlify.app",
             image: '/images/blendify.jpg'
         },
         {
             title: "JustIncredible Moments",
-            description: "All the aesthetics of a not-so-average photography portfolio.",
+            description: "All the aesthetics of a not-so-average photography portfolio",
             link: "https://justincrediblemoment.com",
             image: '/images/justincrediblemoments.jpg'
         }
