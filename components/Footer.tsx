@@ -14,14 +14,18 @@ export const Footer = () => {
                     <div>
                         {userData.socials.map((item, index) => {
                             return(
-                                <Link
-                                    key={index}
-                                    href={item.link}
-                                    target={'_blank'}
-                                    rel={'noopener noreferrer'}
-                                    className={'cursor-pointer pb-1 hover:before:scale-x-100  hover:before:origin-left relative before:w-full before:h-1 before:origin-right before:transition-transform before:duration-300 before:scale-x-0 before:bg-black before:absolute before:left-0 before:bottom-0'}>
-                                    {item.name} { index === userData.socials.length - 1 ? '' : ',  '}
-                                </Link>
+                                <>
+                                    <Link
+                                        key={index}
+                                        href={item.link}
+                                        target={'_blank'}
+                                        rel={'noopener noreferrer'}
+                                        className={'cursor-pointer pb-1 hover:before:scale-x-100  hover:before:origin-left relative before:w-full before:h-1 before:origin-right before:transition-transform before:duration-300 before:scale-x-0 before:bg-black before:absolute before:left-0 before:bottom-0'}>
+                                        {item.name}
+                                    </Link>
+                                    <span>  { index === userData.socials.length - 1 ? '' : ', '} </span>
+                                </>
+
                             )
                         })}
 
