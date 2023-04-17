@@ -21,7 +21,7 @@ export const AboutMe = () => {
                         <div className={'w-full font-bold xl:w-1/2 uppercase text-xl md:text-2xl lg:text-3xl 2xl:text-4xl '}>
                             <h5>The Holy Trinity to my life</h5>
                         </div>
-                        <div className={'w-full sm:w-3/4 md:w-full flex flex-col text-lg sm:text-xl md:text-2xl 2xl:text-3xl relative lg:px-5 xl:px-14 '}>
+                        <div className={'w-full sm:w-3/4 md:w-full flex flex-col text-lg sm:text-xl md:text-2xl lg:text-4xl relative lg:px-5 xl:px-14 '}>
                             <p className={'w-full'}>
                                 For me, coding is more than just combining ones and zeros. It’s about fostering community and pushing the
                                 boundaries. At the core of my being lies an innate gift that has helped me to explore the world in ways that are beyond the ordinary.
