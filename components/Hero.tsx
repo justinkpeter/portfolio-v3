@@ -11,16 +11,16 @@ export const Hero = () => {
     }[];
 
     const heroInfo:HeroInfoTypes = [
-        {
-            title: 'Date',
-            subtitle: '2023'
-        },
+        // {
+        //     title: 'Date',
+        //     subtitle: '2023'
+        // },
         {
             title: 'Role',
             subtitle: 'front end dev & motion'
         },
         {
-            title: 'Location',
+            title: 'current location',
             subtitle: 'dallas, tx'
         },
         {
