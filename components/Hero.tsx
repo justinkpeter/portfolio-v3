@@ -20,7 +20,7 @@ export const Hero = () => {
             subtitle: 'front end dev & motion'
         },
         {
-            title: 'current location',
+            title: 'based in',
             subtitle: 'dallas, tx'
         },
         {
