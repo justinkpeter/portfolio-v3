@@ -30,7 +30,7 @@ export const userData:UserType = {
         {
             title: "Blendify",
             description: "An analysis and discovery tool for spotify users",
-            link: "https://blendifyv2.netlify.app",
+            link: "https://blendify.xyz",
             image: '/images/blendify.jpg'
         },
         {
