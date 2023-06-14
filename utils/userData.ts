@@ -36,7 +36,7 @@ export const userData:UserType = {
         {
             title: "JustIncredible Moments",
             description: "All the aesthetics of a not-so-average photography portfolio",
-            link: "https://justincrediblemoment.com",
+            link: "https://justincrediblemoments.netlify.app/",
             image: '/images/justincrediblemoments.jpg'
         }
     ],
