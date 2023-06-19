@@ -52,8 +52,8 @@ export const Navbar = ({children}:MyProps) => {
     const [menu, setMenu] = React.useState<HTMLInputElement | null>(null);
 
     useEffect(() =>{
-        setMenu(document.getElementById('my-drawer') as HTMLInputElement);
-    }, [])
+        setMenu(document.getElementById('menu-btn') as HTMLInputElement);
+    }, [menu])
 
     function toggleMenu() {
         if(menu){
@@ -68,11 +68,11 @@ export const Navbar = ({children}:MyProps) => {
                 <div className={'drawer-content'}>
                     {/* page content */}
                     <div>
-                        <label htmlFor="my-drawer-4" className="sm:hidden absolute z-[300] top-4 w-fit h-fit right-0 bg-transparent drawer-button btn btn-primary z-[200] border-0 hover:bg-inherit">
+                        <label htmlFor="menu-btn" className="sm:hidden absolute z-[300] top-4 w-fit h-fit right-0 bg-transparent drawer-button btn btn-primary z-[200] border-0 hover:bg-inherit">
                             <Bars2Icon className={'relative h-8 w-8 text-black dark:text-stone-600'}/>
                         </label>
                         <div className={'drawer w-full h-full drawer-end relative'}>
-                            <input id="my-drawer-4" type="checkbox" className={'drawer-toggle'} />
+                            <input id="menu-btn" type="checkbox" className={'drawer-toggle'} />
                             <div className={'drawer-content w-full h-screen flex flex-col justify-center  items-center overflow-x-hidden overflow-y-scroll px-[5vw]  relative dark:text-zinc-800 dark:bg-stone-400'}>
                                 <div className={'relative max-w-[2048px] flex flex-col items-center  w-full h-full'}>
                                     <Navbar2/>
@@ -83,7 +83,7 @@ export const Navbar = ({children}:MyProps) => {
                                 {/*{children}*/}
                             </div>
                             <div className="drawer-side">
-                                <label htmlFor="my-drawer-4" className="drawer-overlay"/>
+                                <label htmlFor="menu-btn" className="drawer-overlay"/>
                                 {/* mobile drawer menu*/}
                                 <div className="menu p-5 pb-36  h-screen w-full bg-base-100 dark:bg-zinc-900 text-base-content dark:text-stone-400 relative justify-end items-end flex flex-col space-y-5 font-cabinet text-5xl font-medium uppercase ">
                                     {['projects', 'about', 'contact'].map((item, index) => {
